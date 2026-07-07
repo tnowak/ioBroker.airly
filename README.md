@@ -1,7 +1,7 @@
 # ioBroker.airly
 
 Adapter reading air quality data (PM2.5, PM10, CAQI index) from the nearest
-[Airly](https://airly.org) station. Converted from a Node-RED flow.
+[Airly](https://airly.org) station.
 
 ## Configuration
 
@@ -14,6 +14,11 @@ Adapter reading air quality data (PM2.5, PM10, CAQI index) from the nearest
 | `pollInterval`   | How often to fetch measurements (minutes)                    |
 
 The nearest station is looked up automatically and re-resolved once per hour.
+
+Airly limits its free public API to **100 calls per day** — about one call every
+15 minutes. Because the adapter also resolves the nearest station once per hour,
+it is recommended to keep `pollInterval` at **20 minutes or longer** to stay
+comfortably within the quota.
 
 ## States
 
@@ -30,21 +35,27 @@ The nearest station is looked up automatically and re-resolved once per hour.
 | `info.installationId`   | Currently used Airly installation id      |
 | `info.lastUpdate`       | Timestamp of the last measurement         |
 
-## Install (from folder, for development)
+## Installation
 
-```bash
-cd iobroker.airly
-npm install
-# then, on the ioBroker host:
-iobroker url /path/to/iobroker.airly
-```
+This adapter is not part of the official ioBroker repository, so install it
+straight from GitHub:
 
-## Differences vs. the original Node-RED flow
+- **In the ioBroker admin:** open **Adapters**, click the **install from custom
+  URL** icon (the GitHub/cat icon in the toolbar), go to the **From own URL /
+  GitHub** tab and enter the repository URL:
 
-- MQTT publishing is replaced by ioBroker states.
-- PM/standards values are looked up **by name** instead of by fixed array index
-  (`values[1]`, `standards[0]`), which was fragile if Airly reorders the arrays.
-- Station caching / 1h refresh logic is kept.
+  ```
+  https://github.com/tnowak/ioBroker.airly
+  ```
+
+- **Or from the command line** on the ioBroker host:
+
+  ```bash
+  iobroker url https://github.com/tnowak/ioBroker.airly
+  ```
+
+After installing, add an instance and fill in your Airly API key and
+coordinates.
 
 ## License
 
