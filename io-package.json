@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "title": "Airly",
     "titleLang": {
       "en": "Airly air quality",
@@ -35,6 +35,11 @@
     },
     "supportCustoms": false,
     "news": {
+      "0.2.0": {
+        "en": "Use Airly point/nearest measurement endpoints (lat/lng directly). Drops the hourly station lookup and installationId. New 'mode' setting: interpolated point (default) or nearest station.",
+        "de": "Nutzt die Airly point/nearest Messendpunkte (direkt per lat/lng). Entfällt die stündliche Stationssuche und installationId. Neue Einstellung 'mode': interpolierter Punkt (Standard) oder nächste Station.",
+        "pl": "Użycie endpointów pomiarowych Airly point/nearest (bezpośrednio lat/lng). Znika godzinne wyszukiwanie stacji i installationId. Nowe ustawienie 'mode': punkt interpolowany (domyślnie) lub najbliższa stacja."
+      },
       "0.1.1": {
         "en": "Fix settings page (use jsonConfig / adminUI instead of legacy index_m.html).",
         "de": "Einstellungsseite korrigiert (jsonConfig / adminUI statt veraltetem index_m.html).",
@@ -57,6 +62,7 @@
     "apikey": "",
     "latitude": "",
     "longitude": "",
+    "mode": "point",
     "maxDistanceKM": 25,
     "pollInterval": 20
   },
@@ -78,18 +84,6 @@
         "read": true,
         "write": false,
         "def": false
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.installationId",
-      "type": "state",
-      "common": {
-        "role": "value",
-        "name": "Current Airly installation id",
-        "type": "number",
-        "read": true,
-        "write": false
       },
       "native": {}
     },

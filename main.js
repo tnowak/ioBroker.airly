@@ -5,16 +5,12 @@ const axios = require('axios');
 const { extractMeasurements } = require('./lib/extract');
 
 const API_BASE = 'https://airapi.airly.eu/v2';
-// Node-RED flow forgot the cached station after 1h, forcing a fresh "nearest" lookup.
-const INSTALLATION_TTL_MS = 60 * 60 * 1000;
 
 class Airly extends utils.Adapter {
     constructor(options = {}) {
         super({ ...options, name: 'airly' });
 
         this.pollTimer = null;
-        this.installationId = null;
-        this.installationTs = 0;
 
         this.on('ready', this.onReady.bind(this));
         this.on('unload', this.onUnload.bind(this));
@@ -22,18 +18,19 @@ class Airly extends utils.Adapter {
 
     async onReady() {
         const apikey = (this.config.apikey || '').trim();
-        const latitude = parseFloat(this.config.latitude);
-        const longitude = parseFloat(this.config.longitude);
+        this.latitude = parseFloat(this.config.latitude);
+        this.longitude = parseFloat(this.config.longitude);
 
         if (!apikey) {
             this.log.error('Airly API key is not configured. Open the adapter settings and enter it.');
             return;
         }
-        if (Number.isNaN(latitude) || Number.isNaN(longitude)) {
+        if (Number.isNaN(this.latitude) || Number.isNaN(this.longitude)) {
             this.log.error('Latitude / longitude are not configured correctly.');
             return;
         }
 
+        this.mode = this.config.mode === 'nearest' ? 'nearest' : 'point';
         this.maxDistanceKM = parseFloat(this.config.maxDistanceKM) || 25;
         const pollMinutes = parseInt(this.config.pollInterval, 10) || 20;
 
@@ -48,28 +45,32 @@ class Airly extends utils.Adapter {
 
         await this.setStateChangedAsync('info.connection', { val: false, ack: true });
 
+        // info.installationId is obsolete since v0.2.0 (point/nearest need no station id).
+        this.delObjectAsync('info.installationId').catch(() => {});
+
         // Run immediately, then on the configured interval (setInterval is cleared on unload).
         await this.poll();
         this.pollTimer = this.setInterval(() => this.poll(), pollMinutes * 60 * 1000);
     }
 
     /**
-     * One measurement cycle: make sure we have a station, fetch measurements, write states.
+     * One measurement cycle: fetch measurements for the configured point and write states.
+     *
+     * Airly's point/nearest measurement endpoints take lat/lng directly, so there is no
+     * separate "find installation" call and no installationId to cache.
      */
     async poll() {
         try {
-            const installationId = await this.getInstallationId();
-            if (installationId === null) {
-                this.log.warn('No Airly station found within the configured distance.');
-                await this.setStateChangedAsync('info.connection', { val: false, ack: true });
-                return;
+            const endpoint = this.mode === 'nearest' ? '/measurements/nearest' : '/measurements/point';
+            const params = { lat: this.latitude, lng: this.longitude };
+            if (this.mode === 'nearest') {
+                params.maxDistanceKM = this.maxDistanceKM;
             }
 
-            const { data } = await this.http.get('/measurements/installation', {
-                params: { installationId },
-            });
+            const res = await this.http.get(endpoint, { params });
+            this.logQuota(res.headers);
 
-            await this.writeMeasurements(data);
+            await this.writeMeasurements(res.data);
             await this.setStateChangedAsync('info.connection', { val: true, ack: true });
         } catch (err) {
             this.handleError(err);
@@ -78,41 +79,12 @@ class Airly extends utils.Adapter {
     }
 
     /**
-     * Return the nearest station id, refreshing it once the cache TTL expires.
-     */
-    async getInstallationId() {
-        const fresh = this.installationId !== null && Date.now() - this.installationTs < INSTALLATION_TTL_MS;
-        if (fresh) {
-            return this.installationId;
-        }
-
-        const { data } = await this.http.get('/installations/nearest', {
-            params: {
-                lat: parseFloat(this.config.latitude),
-                lng: parseFloat(this.config.longitude),
-                maxDistanceKM: this.maxDistanceKM,
-            },
-        });
-
-        if (!Array.isArray(data) || data.length === 0) {
-            this.installationId = null;
-            return null;
-        }
-
-        this.installationId = data[0].id;
-        this.installationTs = Date.now();
-        this.log.debug(`Using Airly installation ${this.installationId}`);
-        await this.setStateChangedAsync('info.installationId', { val: this.installationId, ack: true });
-        return this.installationId;
-    }
-
-    /**
      * Map the Airly measurements payload onto adapter states.
      */
     async writeMeasurements(payload) {
         const states = extractMeasurements(payload);
         if (!states) {
-            this.log.warn('Airly response contained no "current" measurements.');
+            this.log.warn('Airly response contained no "current" measurements (point out of coverage?).');
             return;
         }
 
@@ -123,11 +95,24 @@ class Airly extends utils.Adapter {
         );
     }
 
+    /**
+     * Log how much of the daily quota is left, read from Airly's rate-limit headers.
+     */
+    logQuota(headers = {}) {
+        const remaining = headers['x-ratelimit-remaining-day'];
+        const limit = headers['x-ratelimit-limit-day'];
+        if (remaining !== undefined && limit !== undefined) {
+            this.log.debug(`Airly daily quota: ${remaining}/${limit} calls remaining`);
+        }
+    }
+
     handleError(err) {
         if (err.response) {
             const status = err.response.status;
             if (status === 401) {
                 this.log.error('Airly API rejected the key (401). Check the apikey in the settings.');
+            } else if (status === 404) {
+                this.log.warn('Airly found no station near the configured point (404). Increase "Max distance" or switch mode.');
             } else if (status === 429) {
                 this.log.warn('Airly API rate limit reached (429). Increase the poll interval.');
             } else {

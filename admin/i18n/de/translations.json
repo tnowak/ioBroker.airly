@@ -3,7 +3,12 @@
   "Get one at developer.airly.org": "Erhältlich unter developer.airly.org",
   "Latitude": "Breitengrad",
   "Longitude": "Längengrad",
+  "Data source": "Datenquelle",
+  "Interpolated point (recommended)": "Interpolierter Punkt (empfohlen)",
+  "Nearest station": "Nächste Station",
+  "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.": "Punkt: Airly interpoliert für Ihre genauen Koordinaten. Nächste: Daten der nächstgelegenen physischen Station.",
   "Max distance (km)": "Maximale Entfernung (km)",
+  "Only used in 'Nearest station' mode.": "Nur im Modus „Nächste Station\" verwendet.",
   "Poll interval (minutes)": "Abfrageintervall (Minuten)",
   "Airly free tier allows a limited number of requests per day": "Der kostenlose Airly-Tarif erlaubt nur eine begrenzte Anzahl von Anfragen pro Tag"
 }

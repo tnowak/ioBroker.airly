@@ -25,12 +25,27 @@
       "sm": 12,
       "md": 3
     },
+    "mode": {
+      "type": "select",
+      "label": "Data source",
+      "options": [
+        { "label": "Interpolated point (recommended)", "value": "point" },
+        { "label": "Nearest station", "value": "nearest" }
+      ],
+      "default": "point",
+      "help": "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.",
+      "sm": 12,
+      "md": 6,
+      "newLine": true
+    },
     "maxDistanceKM": {
       "type": "number",
       "label": "Max distance (km)",
       "min": 1,
       "max": 100,
       "default": 25,
+      "help": "Only used in 'Nearest station' mode.",
+      "hidden": "data.mode === 'point'",
       "sm": 12,
       "md": 3,
       "newLine": true
