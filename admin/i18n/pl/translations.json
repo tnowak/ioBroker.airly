@@ -1,0 +1,9 @@
+{
+  "Airly API key": "Klucz API Airly",
+  "Get one at developer.airly.org": "Pobierz go na developer.airly.org",
+  "Latitude": "Szerokość geograficzna",
+  "Longitude": "Długość geograficzna",
+  "Max distance (km)": "Maksymalna odległość (km)",
+  "Poll interval (minutes)": "Interwał odpytywania (minuty)",
+  "Airly free tier allows a limited number of requests per day": "Darmowy plan Airly ma dzienny limit zapytań"
+}

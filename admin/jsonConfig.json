@@ -1,0 +1,49 @@
+{
+  "i18n": true,
+  "type": "panel",
+  "items": {
+    "apikey": {
+      "type": "password",
+      "label": "Airly API key",
+      "help": "Get one at developer.airly.org",
+      "sm": 12,
+      "md": 6,
+      "newLine": true
+    },
+    "latitude": {
+      "type": "text",
+      "label": "Latitude",
+      "placeholder": "52.165814",
+      "sm": 12,
+      "md": 3,
+      "newLine": true
+    },
+    "longitude": {
+      "type": "text",
+      "label": "Longitude",
+      "placeholder": "21.046181",
+      "sm": 12,
+      "md": 3
+    },
+    "maxDistanceKM": {
+      "type": "number",
+      "label": "Max distance (km)",
+      "min": 1,
+      "max": 100,
+      "default": 25,
+      "sm": 12,
+      "md": 3,
+      "newLine": true
+    },
+    "pollInterval": {
+      "type": "number",
+      "label": "Poll interval (minutes)",
+      "min": 5,
+      "max": 1440,
+      "default": 20,
+      "help": "Airly free tier allows a limited number of requests per day",
+      "sm": 12,
+      "md": 3
+    }
+  }
+}

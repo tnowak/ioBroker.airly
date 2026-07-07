@@ -1,0 +1,208 @@
+{
+  "common": {
+    "name": "airly",
+    "version": "0.1.0",
+    "title": "Airly",
+    "titleLang": {
+      "en": "Airly air quality",
+      "de": "Airly Luftqualität",
+      "pl": "Airly jakość powietrza"
+    },
+    "desc": {
+      "en": "Air quality data (PM2.5, PM10, CAQI) from the nearest Airly station",
+      "pl": "Dane o jakości powietrza (PM2.5, PM10, CAQI) z najbliższej stacji Airly"
+    },
+    "authors": [
+      "tnowak <tnowak@netventure.pl>"
+    ],
+    "keywords": [
+      "airly",
+      "air quality",
+      "smog"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "airly.png",
+    "enabled": true,
+    "mode": "daemon",
+    "type": "weather",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "materialize": true,
+    "supportCustoms": false,
+    "news": {
+      "0.1.0": {
+        "en": "Initial release. Converted from a Node-RED flow.",
+        "de": "Erste Veröffentlichung. Aus einem Node-RED-Flow konvertiert.",
+        "pl": "Pierwsze wydanie. Skonwertowane z flow Node-RED."
+      }
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=5.0.0"
+      }
+    ],
+    "extIcon": "https://raw.githubusercontent.com/tnowak/ioBroker.airly/master/admin/airly.png"
+  },
+  "native": {
+    "apikey": "",
+    "latitude": "",
+    "longitude": "",
+    "maxDistanceKM": 25,
+    "pollInterval": 20
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": { "name": "Information" },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "API reachable / data valid",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.installationId",
+      "type": "state",
+      "common": {
+        "role": "value",
+        "name": "Current Airly installation id",
+        "type": "number",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.lastUpdate",
+      "type": "state",
+      "common": {
+        "role": "value.time",
+        "name": "Last successful measurement time",
+        "type": "number",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "pm25",
+      "type": "channel",
+      "common": { "name": "PM2.5" },
+      "native": {}
+    },
+    {
+      "_id": "pm25.value",
+      "type": "state",
+      "common": {
+        "role": "value",
+        "name": "PM2.5 concentration",
+        "type": "number",
+        "unit": "µg/m³",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "pm25.limitPercent",
+      "type": "state",
+      "common": {
+        "role": "value",
+        "name": "PM2.5 - percent of the norm",
+        "type": "number",
+        "unit": "%",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "pm10",
+      "type": "channel",
+      "common": { "name": "PM10" },
+      "native": {}
+    },
+    {
+      "_id": "pm10.value",
+      "type": "state",
+      "common": {
+        "role": "value",
+        "name": "PM10 concentration",
+        "type": "number",
+        "unit": "µg/m³",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "pm10.limitPercent",
+      "type": "state",
+      "common": {
+        "role": "value",
+        "name": "PM10 - percent of the norm",
+        "type": "number",
+        "unit": "%",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "caqi",
+      "type": "channel",
+      "common": { "name": "CAQI index" },
+      "native": {}
+    },
+    {
+      "_id": "caqi.value",
+      "type": "state",
+      "common": {
+        "role": "value",
+        "name": "CAQI index value",
+        "type": "number",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "caqi.level",
+      "type": "state",
+      "common": {
+        "role": "text",
+        "name": "CAQI index level",
+        "type": "string",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "caqi.description",
+      "type": "state",
+      "common": {
+        "role": "text",
+        "name": "CAQI description",
+        "type": "string",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    }
+  ]
+}

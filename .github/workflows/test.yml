@@ -1,0 +1,37 @@
+name: Test and Release
+
+on:
+  push:
+    branches: [master, main]
+    tags: ['v*']
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - run: npm ci
+      - name: Validate io-package.json / package.json
+        run: npm run test:package
+
+  unit-tests:
+    needs: check
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+        os: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - name: Run unit tests
+        run: npm run test:unit
