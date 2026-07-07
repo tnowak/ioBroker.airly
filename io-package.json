@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "title": "Airly",
     "titleLang": {
       "en": "Airly air quality",
@@ -30,9 +30,16 @@
     "compact": true,
     "connectionType": "cloud",
     "dataSource": "poll",
-    "materialize": true,
+    "adminUI": {
+      "config": "json"
+    },
     "supportCustoms": false,
     "news": {
+      "0.1.1": {
+        "en": "Fix settings page (use jsonConfig / adminUI instead of legacy index_m.html).",
+        "de": "Einstellungsseite korrigiert (jsonConfig / adminUI statt veraltetem index_m.html).",
+        "pl": "Naprawiona strona ustawień (jsonConfig / adminUI zamiast przestarzałego index_m.html)."
+      },
       "0.1.0": {
         "en": "Initial release. Converted from a Node-RED flow.",
         "de": "Erste Veröffentlichung. Aus einem Node-RED-Flow konvertiert.",
