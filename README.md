@@ -53,6 +53,9 @@ and fill in your Airly API key and coordinates.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.3.5 (2026-07-08)
+* (tnowak) Fixed the jsonConfig schema URL in .vscode/settings.json and bumped @iobroker/adapter-dev
+
 ### 0.3.4 (2026-07-08)
 * (tnowak) Addressed repochecker suggestions: short-format i18n, CHANGELOG_OLD.md, .vscode settings, Dependabot automerge + higher PR limit, and @iobroker/adapter-dev
 
@@ -64,9 +67,6 @@ and fill in your Airly API key and coordinates.
 
 ### 0.3.1 (2026-07-08)
 * (tnowak) Repository-readiness fixes: metadata, license information, encrypted API key, CI workflow and responsive settings
-
-### 0.3.0 (2026-07-08)
-* (tnowak) Added Sentry error reporting and declared the admin dependency and adapter tier (repository readiness)
 
 Older entries are kept in [CHANGELOG_OLD.md](CHANGELOG_OLD.md).
 

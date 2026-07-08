@@ -1,4 +1,7 @@
 # Older changelog entries
+## 0.3.0 (2026-07-08)
+* (tnowak) Added Sentry error reporting and declared the admin dependency and adapter tier (repository readiness)
+
 ## 0.2.0 (2026-07-08)
 * (tnowak) Switched to Airly `measurements/point` / `measurements/nearest` (lat/lng directly); removed the hourly station lookup and `installationId`; added the `mode` setting
 

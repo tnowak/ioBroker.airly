@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.3.4",
+    "version": "0.3.5",
     "titleLang": {
       "en": "Airly air quality",
       "de": "Airly Luftqualität",
@@ -55,6 +55,19 @@
     },
     "supportCustoms": false,
     "news": {
+      "0.3.5": {
+        "en": "Fixed the jsonConfig schema URL in .vscode/settings.json and bumped @iobroker/adapter-dev",
+        "de": "Die URL des jsonConfig-Schemas in .vscode/settings.json wurde korrigiert und @iobroker/adapter-dev aktualisiert.",
+        "ru": "Исправлен URL-адрес схемы jsonConfig в файле .vscode/settings.json и обновлена ссылка на @iobroker/adapter-dev.",
+        "pt": "Corrigi a URL do esquema jsonConfig em .vscode/settings.json e atualizei @iobroker/adapter-dev",
+        "nl": "De URL van het jsonConfig-schema in .vscode/settings.json is gecorrigeerd en @iobroker/adapter-dev is bijgewerkt.",
+        "fr": "L'URL du schéma jsonConfig a été corrigée dans .vscode/settings.json et la tâche @iobroker/adapter-dev a été mise à jour.",
+        "it": "Corretto l'URL dello schema jsonConfig in .vscode/settings.json e aggiornato @iobroker/adapter-dev",
+        "es": "Se corrigió la URL del esquema jsonConfig en .vscode/settings.json y se actualizó @iobroker/adapter-dev.",
+        "pl": "Naprawiono schemat adresu URL jsonConfig w pliku .vscode/settings.json i zwiększono @iobroker/adapter-dev",
+        "uk": "Виправлено URL-адресу схеми jsonConfig у .vscode/settings.json та підвищено значення @iobroker/adapter-dev",
+        "zh-cn": "修复了 .vscode/settings.json 中的 jsonConfig 架构 URL，并更新了 @iobroker/adapter-dev。"
+      },
       "0.3.4": {
         "en": "Addressed repochecker suggestions: short-format i18n, CHANGELOG_OLD.md, .vscode settings, Dependabot automerge + higher PR limit, and @iobroker/adapter-dev",
         "de": "Folgende Vorschläge für den Repo-Checker wurden berücksichtigt: Kurzformat-i18n, CHANGELOG_OLD.md, .vscode-Einstellungen, Dependabot-Automerge + höheres PR-Limit und @iobroker/adapter-dev",
