@@ -1,14 +1,14 @@
 {
-  "Airly API key": "Airly API key",
-  "Get one at developer.airly.org": "Get one at developer.airly.org",
+  "Airly API key": "Chave da API Airly",
+  "Get one at developer.airly.org": "Obtenha uma em developer.airly.org",
   "Latitude": "Latitude",
   "Longitude": "Longitude",
-  "Data source": "Data source",
-  "Interpolated point (recommended)": "Interpolated point (recommended)",
-  "Nearest station": "Nearest station",
-  "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.": "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.",
-  "Max distance (km)": "Max distance (km)",
-  "Only used in 'Nearest station' mode.": "Only used in 'Nearest station' mode.",
-  "Poll interval (minutes)": "Poll interval (minutes)",
-  "Airly free tier allows a limited number of requests per day": "Airly free tier allows a limited number of requests per day"
+  "Data source": "Fonte de dados",
+  "Interpolated point (recommended)": "Ponto interpolado (recomendado)",
+  "Nearest station": "Estação mais próxima",
+  "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.": "Ponto: a Airly interpola para as suas coordenadas exatas. Mais próxima: dados da estação física mais próxima.",
+  "Max distance (km)": "Distância máx. (km)",
+  "Only used in 'Nearest station' mode.": "Usado apenas no modo \"Estação mais próxima\".",
+  "Poll interval (minutes)": "Intervalo de consulta (minutos)",
+  "Airly free tier allows a limited number of requests per day": "O plano gratuito da Airly permite um número limitado de pedidos por dia"
 }

@@ -1,14 +1,14 @@
 {
-  "Airly API key": "Airly API key",
-  "Get one at developer.airly.org": "Get one at developer.airly.org",
-  "Latitude": "Latitude",
-  "Longitude": "Longitude",
-  "Data source": "Data source",
-  "Interpolated point (recommended)": "Interpolated point (recommended)",
-  "Nearest station": "Nearest station",
-  "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.": "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.",
-  "Max distance (km)": "Max distance (km)",
-  "Only used in 'Nearest station' mode.": "Only used in 'Nearest station' mode.",
-  "Poll interval (minutes)": "Poll interval (minutes)",
-  "Airly free tier allows a limited number of requests per day": "Airly free tier allows a limited number of requests per day"
+  "Airly API key": "Airly API-sleutel",
+  "Get one at developer.airly.org": "Verkrijg er een op developer.airly.org",
+  "Latitude": "Breedtegraad",
+  "Longitude": "Lengtegraad",
+  "Data source": "Gegevensbron",
+  "Interpolated point (recommended)": "Geïnterpoleerd punt (aanbevolen)",
+  "Nearest station": "Dichtstbijzijnde station",
+  "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.": "Punt: Airly interpoleert voor je exacte coördinaten. Dichtstbijzijnde: gegevens van het dichtstbijzijnde fysieke station.",
+  "Max distance (km)": "Max. afstand (km)",
+  "Only used in 'Nearest station' mode.": "Alleen gebruikt in de modus \"Dichtstbijzijnde station\".",
+  "Poll interval (minutes)": "Pollinterval (minuten)",
+  "Airly free tier allows a limited number of requests per day": "Het gratis abonnement van Airly staat een beperkt aantal verzoeken per dag toe"
 }

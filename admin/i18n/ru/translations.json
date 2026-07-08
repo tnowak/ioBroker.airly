@@ -1,14 +1,14 @@
 {
-  "Airly API key": "Airly API key",
-  "Get one at developer.airly.org": "Get one at developer.airly.org",
-  "Latitude": "Latitude",
-  "Longitude": "Longitude",
-  "Data source": "Data source",
-  "Interpolated point (recommended)": "Interpolated point (recommended)",
-  "Nearest station": "Nearest station",
-  "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.": "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.",
-  "Max distance (km)": "Max distance (km)",
-  "Only used in 'Nearest station' mode.": "Only used in 'Nearest station' mode.",
-  "Poll interval (minutes)": "Poll interval (minutes)",
-  "Airly free tier allows a limited number of requests per day": "Airly free tier allows a limited number of requests per day"
+  "Airly API key": "Ключ API Airly",
+  "Get one at developer.airly.org": "Получите его на developer.airly.org",
+  "Latitude": "Широта",
+  "Longitude": "Долгота",
+  "Data source": "Источник данных",
+  "Interpolated point (recommended)": "Интерполированная точка (рекомендуется)",
+  "Nearest station": "Ближайшая станция",
+  "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.": "Точка: Airly интерполирует данные для ваших точных координат. Ближайшая: данные с ближайшей физической станции.",
+  "Max distance (km)": "Макс. расстояние (км)",
+  "Only used in 'Nearest station' mode.": "Используется только в режиме «Ближайшая станция».",
+  "Poll interval (minutes)": "Интервал опроса (минуты)",
+  "Airly free tier allows a limited number of requests per day": "Бесплатный тариф Airly ограничивает количество запросов в день"
 }
