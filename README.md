@@ -53,6 +53,9 @@ and fill in your Airly API key and coordinates.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.3.3 (2026-07-08)
+* (tnowak) Removed chai and mocha from devDependencies (provided by @iobroker/testing) to satisfy the repository checker
+
 ### 0.3.2 (2026-07-08)
 * (tnowak) Added ESLint (@iobroker/eslint-config), tsconfig, Dependabot and the release-script for development and release automation
 

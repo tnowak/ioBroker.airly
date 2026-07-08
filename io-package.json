@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "titleLang": {
       "en": "Airly air quality",
       "de": "Airly Luftqualität",
@@ -55,6 +55,19 @@
     },
     "supportCustoms": false,
     "news": {
+      "0.3.3": {
+        "en": "Removed chai and mocha from devDependencies (provided by @iobroker/testing) to satisfy the repository checker",
+        "de": "Chai und Mocha wurden aus den Entwicklungsabhängigkeiten (bereitgestellt von @iobroker/testing) entfernt, um die Anforderungen des Repository-Checkers zu erfüllen.",
+        "ru": "Удалены зависимости chai и mocha из devDependencies (предоставлены @iobroker/testing), чтобы удовлетворить требованиям проверки репозитория.",
+        "pt": "Removi chai e mocha das devDependencies (fornecidas por @iobroker/testing) para atender aos requisitos do verificador de repositório.",
+        "nl": "Chai en Mocha zijn verwijderd uit devDependencies (aangeleverd door @iobroker/testing) om te voldoen aan de eisen van de repository checker.",
+        "fr": "Les dépendances chai et mocha ont été supprimées des dépendances de développement (fournies par @iobroker/testing) afin de satisfaire aux exigences du vérificateur de dépôt.",
+        "it": "Rimossi chai e mocha da devDependencies (forniti da @iobroker/testing) per soddisfare il controllo del repository.",
+        "es": "Se eliminaron chai y mocha de devDependencies (proporcionados por @iobroker/testing) para satisfacer el verificador del repositorio.",
+        "pl": "Usunięto chai i mocha z devDependencies (zapewnionych przez @iobroker/testing), aby spełnić wymagania programu sprawdzającego repozytorium",
+        "uk": "Видалено чай та мокку з devDependencies (надано @iobroker/testing), щоб задовольнити вимоги перевірки репозиторію",
+        "zh-cn": "为了满足仓库检查器的要求，已从 devDependencies（由 @iobroker/testing 提供）中移除 chai 和 mocha。"
+      },
       "0.3.2": {
         "en": "Added ESLint (@iobroker/eslint-config), tsconfig, Dependabot and the release-script for development and release automation",
         "de": "ESLint (@iobroker/eslint-config), tsconfig, Dependabot und das Release-Skript für die Entwicklungs- und Release-Automatisierung wurden hinzugefügt.",
