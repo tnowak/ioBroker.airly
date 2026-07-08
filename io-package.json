@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "titleLang": {
       "en": "Airly air quality",
       "de": "Airly Luftqualität",
@@ -55,6 +55,19 @@
     },
     "supportCustoms": false,
     "news": {
+      "0.3.2": {
+        "en": "Added ESLint (@iobroker/eslint-config), tsconfig, Dependabot and the release-script for development and release automation",
+        "de": "ESLint (@iobroker/eslint-config), tsconfig, Dependabot und das Release-Skript für die Entwicklungs- und Release-Automatisierung wurden hinzugefügt.",
+        "ru": "Добавлены ESLint (@iobroker/eslint-config), tsconfig, Dependabot и release-script для автоматизации разработки и выпуска релизов.",
+        "pt": "Adicionado ESLint (@iobroker/eslint-config), tsconfig, Dependabot e o script de lançamento para automação de desenvolvimento e lançamento.",
+        "nl": "ESLint (@iobroker/eslint-config), tsconfig, Dependabot en het release-script zijn toegevoegd voor ontwikkeling en releaseautomatisering.",
+        "fr": "Ajout d'ESLint (@iobroker/eslint-config), tsconfig, Dependabot et du script de déploiement pour l'automatisation du développement et du déploiement.",
+        "it": "Aggiunti ESLint (@iobroker/eslint-config), tsconfig, Dependabot e lo script di rilascio per l'automazione dello sviluppo e del rilascio.",
+        "es": "Se añadieron ESLint (@iobroker/eslint-config), tsconfig, Dependabot y el script de lanzamiento para la automatización del desarrollo y el lanzamiento.",
+        "pl": "Dodano ESLint (@iobroker/eslint-config), tsconfig, Dependabot i skrypt wydania do automatyzacji rozwoju i wydania",
+        "uk": "Додано ESLint (@iobroker/eslint-config), tsconfig, Dependabot та release-скрипт для автоматизації розробки та випуску.",
+        "zh-cn": "新增了 ESLint (@iobroker/eslint-config)、tsconfig、Dependabot 和发布脚本，用于开发和发布自动化。"
+      },
       "0.3.1": {
         "en": "Repository-readiness fixes: metadata, license information, encrypted API key, CI workflow and responsive settings.",
         "de": "Repository-Reife: Metadaten, Lizenzinformationen, verschlüsselter API-Schlüssel, CI-Workflow und responsive Einstellungen.",

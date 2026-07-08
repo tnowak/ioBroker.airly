@@ -1,6 +1,6 @@
 {
   "name": "iobroker.airly",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Air quality data from Airly stations",
   "author": "tnowak <tnowak@netventure.pl>",
   "license": "MIT",
