@@ -23,16 +23,16 @@
   },
   "homepage": "https://github.com/tnowak/ioBroker.airly#readme",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.4.1",
-    "axios": "^1.7.7"
+    "axios": "^1.18.1"
   },
   "devDependencies": {
     "@iobroker/testing": "^5.2.2",
     "chai": "^4.5.0",
-    "mocha": "^10.7.3"
+    "mocha": "^11.7.3"
   },
   "files": [
     "admin/",
@@ -42,8 +42,9 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "mocha --exit",
+    "test": "mocha test/*.test.js --exit",
     "test:package": "mocha test/package.test.js --exit",
-    "test:unit": "mocha test/extract.test.js --exit"
+    "test:unit": "mocha test/extract.test.js --exit",
+    "test:integration": "mocha test/integration.js --exit"
   }
 }

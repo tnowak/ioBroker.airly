@@ -1,37 +1,58 @@
 name: Test and Release
 
+# Run this job on all pushes and pull requests
+# as well as tags with a semantic version
 on:
   push:
-    branches: [master, main]
-    tags: ['v*']
-  pull_request:
-    branches: [master, main]
+    branches:
+      - master
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+      - 'v[0-9]+.[0-9]+.[0-9]+-**'
+  pull_request: {}
+
+# Cancel previous PR/branch runs when a new commit is pushed
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  check:
+  # Performs quick checks before the expensive test runs
+  check-and-lint:
+    if: contains(github.event.head_commit.message, '[skip ci]') == false
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: ioBroker/testing-action-check@v1
         with:
-          node-version: 20.x
-      - run: npm ci
-      - name: Validate io-package.json / package.json
-        run: npm run test:package
+          node-version: '20.x'
+          lint: false
 
-  unit-tests:
-    needs: check
+  # Runs adapter tests on all supported node versions and OSes
+  adapter-tests:
+    if: contains(github.event.head_commit.message, '[skip ci]') == false
+    needs: [check-and-lint]
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        node-version: [20.x, 22.x]
         os: [ubuntu-latest]
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+      - uses: ioBroker/testing-action-adapter@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - name: Run unit tests
-        run: npm run test:unit
+          os: ${{ matrix.os }}
+
+  # Deploy the final package to npm on version tags
+  deploy:
+    needs: [check-and-lint, adapter-tests]
+    if: |
+      contains(github.event.head_commit.message, '[skip ci]') == false &&
+      github.event_name == 'push' &&
+      startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ioBroker/testing-action-deploy@v1
+        with:
+          node-version: '20.x'
+          npm-token: ${{ secrets.NPM_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
