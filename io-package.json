@@ -67,58 +67,6 @@
         "pl": "Poprawki pod repozytorium: metadane, informacje o licencji, zaszyfrowany klucz API, workflow CI i responsywne ustawienia.",
         "zh-cn": "为进入仓库做准备：元数据、许可信息、加密的 API 密钥、CI 工作流和自适应设置。",
         "uk": "Підготовка до репозиторію: метадані, інформація про ліцензію, шифрування ключа API, CI-воркфлоу та адаптивні налаштування."
-      },
-      "0.3.0": {
-        "en": "Add Sentry error reporting and declare the admin dependency and adapter tier.",
-        "de": "Sentry-Fehlerberichterstattung hinzugefügt sowie admin-Abhängigkeit und Adapter-Tier deklariert.",
-        "ru": "Добавлено сообщение об ошибках через Sentry, объявлены зависимость admin и уровень адаптера.",
-        "pt": "Adicionado relato de erros via Sentry e declaradas a dependência admin e o tier do adaptador.",
-        "nl": "Sentry-foutrapportage toegevoegd en de admin-afhankelijkheid en adaptertier gedeclareerd.",
-        "fr": "Ajout du rapport d'erreurs Sentry et déclaration de la dépendance admin et du tier de l'adaptateur.",
-        "it": "Aggiunta la segnalazione errori Sentry e dichiarate la dipendenza admin e il tier dell'adattatore.",
-        "es": "Añadido el informe de errores con Sentry y declaradas la dependencia admin y el tier del adaptador.",
-        "pl": "Dodano raportowanie błędów Sentry oraz zadeklarowano zależność admin i tier adaptera.",
-        "zh-cn": "新增 Sentry 错误报告，并声明 admin 依赖和适配器层级。",
-        "uk": "Додано звітування про помилки через Sentry та оголошено залежність admin і рівень адаптера."
-      },
-      "0.2.0": {
-        "en": "Use Airly point/nearest measurement endpoints (lat/lng directly). Removes the hourly station lookup and installationId. New 'mode' setting.",
-        "de": "Nutzt die Airly point/nearest Messendpunkte (direkt per lat/lng). Entfällt die stündliche Stationssuche und installationId. Neue Einstellung 'mode'.",
-        "ru": "Используются конечные точки Airly point/nearest (напрямую по lat/lng). Убраны ежечасный поиск станции и installationId. Новая настройка 'mode'.",
-        "pt": "Usa os endpoints de medição point/nearest da Airly (lat/lng diretamente). Remove a procura de estação por hora e o installationId. Nova definição 'mode'.",
-        "nl": "Gebruikt de Airly point/nearest meetendpoints (direct via lat/lng). Verwijdert de uurlijkse stationszoekopdracht en installationId. Nieuwe instelling 'mode'.",
-        "fr": "Utilise les endpoints de mesure point/nearest d'Airly (lat/lng directement). Supprime la recherche horaire de station et l'installationId. Nouveau paramètre 'mode'.",
-        "it": "Usa gli endpoint di misura point/nearest di Airly (lat/lng direttamente). Rimuove la ricerca oraria della stazione e l'installationId. Nuova impostazione 'mode'.",
-        "es": "Usa los endpoints de medición point/nearest de Airly (lat/lng directamente). Elimina la búsqueda horaria de estación y el installationId. Nuevo ajuste 'mode'.",
-        "pl": "Użycie endpointów pomiarowych Airly point/nearest (bezpośrednio lat/lng). Znika godzinne wyszukiwanie stacji i installationId. Nowe ustawienie 'mode'.",
-        "zh-cn": "使用 Airly 的 point/nearest 测量端点（直接用经纬度）。移除每小时的站点查找和 installationId。新增 'mode' 设置。",
-        "uk": "Використовує кінцеві точки вимірювання Airly point/nearest (безпосередньо за lat/lng). Прибрано щогодинний пошук станції та installationId. Нове налаштування 'mode'."
-      },
-      "0.1.1": {
-        "en": "Fix the settings page (jsonConfig/adminUI instead of the legacy index_m.html).",
-        "de": "Einstellungsseite korrigiert (jsonConfig/adminUI statt des veralteten index_m.html).",
-        "ru": "Исправлена страница настроек (jsonConfig/adminUI вместо устаревшего index_m.html).",
-        "pt": "Correção da página de definições (jsonConfig/adminUI em vez do antigo index_m.html).",
-        "nl": "Instellingenpagina gerepareerd (jsonConfig/adminUI in plaats van het verouderde index_m.html).",
-        "fr": "Correction de la page de paramètres (jsonConfig/adminUI au lieu de l'ancien index_m.html).",
-        "it": "Corretta la pagina delle impostazioni (jsonConfig/adminUI invece del vecchio index_m.html).",
-        "es": "Corregida la página de ajustes (jsonConfig/adminUI en lugar del antiguo index_m.html).",
-        "pl": "Naprawiona strona ustawień (jsonConfig/adminUI zamiast przestarzałego index_m.html).",
-        "zh-cn": "修复设置页面（使用 jsonConfig/adminUI 代替旧的 index_m.html）。",
-        "uk": "Виправлено сторінку налаштувань (jsonConfig/adminUI замість застарілого index_m.html)."
-      },
-      "0.1.0": {
-        "en": "Initial release.",
-        "de": "Erste Veröffentlichung.",
-        "ru": "Первый выпуск.",
-        "pt": "Versão inicial.",
-        "nl": "Eerste release.",
-        "fr": "Version initiale.",
-        "it": "Versione iniziale.",
-        "es": "Versión inicial.",
-        "pl": "Pierwsze wydanie.",
-        "zh-cn": "首次发布。",
-        "uk": "Перший випуск."
       }
     },
     "dependencies": [
