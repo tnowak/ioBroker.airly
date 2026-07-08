@@ -3,6 +3,14 @@
 Adapter reading air quality data (PM2.5, PM10, CAQI index) for your location
 from [Airly](https://airly.org).
 
+## Sentry reporting
+
+This adapter uses [Sentry](https://sentry.io) libraries to automatically report
+exceptions and code errors to the developers. For more details and for
+information on how to disable the error reporting see
+[Sentry-Plugin Documentation](https://github.com/ioBroker/plugin-sentry#plugin-sentry).
+Sentry reporting is used starting with js-controller 3.0.
+
 ## Configuration
 
 | Setting          | Meaning                                                          |
@@ -39,27 +47,14 @@ debug log on every poll.
 
 ## Installation
 
-This adapter is not part of the official ioBroker repository, so install it
-straight from GitHub:
-
-- **In the ioBroker admin:** open **Adapters**, click the **install from custom
-  URL** icon (the GitHub/cat icon in the toolbar), go to the **From own URL /
-  GitHub** tab and enter the repository URL:
-
-  ```
-  https://github.com/tnowak/ioBroker.airly
-  ```
-
-- **Or from the command line** on the ioBroker host:
-
-  ```bash
-  iobroker url https://github.com/tnowak/ioBroker.airly
-  ```
-
-After installing, add an instance and fill in your Airly API key and
-coordinates.
+Open the **Adapters** tab in the ioBroker admin, find **Airly** and click the
+**+** button to install it and add an instance. Then open the instance settings
+and fill in your Airly API key and coordinates.
 
 ## Changelog
+
+### 0.3.1 (2026-07-08)
+* (tnowak) Repository-readiness fixes: metadata, license information, encrypted API key, CI workflow and responsive settings
 
 ### 0.3.0 (2026-07-08)
 * (tnowak) Added Sentry error reporting and declared the admin dependency and adapter tier (repository readiness)
@@ -75,4 +70,8 @@ coordinates.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+The MIT License (MIT)
+
+Copyright (c) 2026 tnowak <tnowak@netventure.pl>
+
+See [LICENSE](LICENSE) for the full text.

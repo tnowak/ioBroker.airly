@@ -1,16 +1,32 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.3.0",
-    "title": "Airly",
+    "version": "0.3.1",
     "titleLang": {
       "en": "Airly air quality",
       "de": "Airly Luftqualität",
-      "pl": "Airly jakość powietrza"
+      "ru": "Качество воздуха Airly",
+      "pt": "Qualidade do ar Airly",
+      "nl": "Airly luchtkwaliteit",
+      "fr": "Qualité de l'air Airly",
+      "it": "Qualità dell'aria Airly",
+      "es": "Calidad del aire Airly",
+      "pl": "Airly jakość powietrza",
+      "zh-cn": "Airly 空气质量",
+      "uk": "Якість повітря Airly"
     },
     "desc": {
-      "en": "Air quality data (PM2.5, PM10, CAQI) from the nearest Airly station",
-      "pl": "Dane o jakości powietrza (PM2.5, PM10, CAQI) z najbliższej stacji Airly"
+      "en": "Air quality data (PM2.5, PM10, CAQI) from Airly for your location",
+      "de": "Luftqualitätsdaten (PM2.5, PM10, CAQI) von Airly für Ihren Standort",
+      "ru": "Данные о качестве воздуха (PM2.5, PM10, CAQI) от Airly для вашего местоположения",
+      "pt": "Dados de qualidade do ar (PM2.5, PM10, CAQI) da Airly para a sua localização",
+      "nl": "Luchtkwaliteitsgegevens (PM2.5, PM10, CAQI) van Airly voor jouw locatie",
+      "fr": "Données de qualité de l'air (PM2.5, PM10, CAQI) d'Airly pour votre position",
+      "it": "Dati sulla qualità dell'aria (PM2.5, PM10, CAQI) da Airly per la tua posizione",
+      "es": "Datos de calidad del aire (PM2.5, PM10, CAQI) de Airly para tu ubicación",
+      "pl": "Dane o jakości powietrza (PM2.5, PM10, CAQI) z Airly dla Twojej lokalizacji",
+      "zh-cn": "来自 Airly 的空气质量数据（PM2.5、PM10、CAQI），针对你的位置",
+      "uk": "Дані про якість повітря (PM2.5, PM10, CAQI) від Airly для вашого місцезнаходження"
     },
     "authors": [
       "tnowak <tnowak@netventure.pl>"
@@ -20,9 +36,7 @@
       "air quality",
       "smog"
     ],
-    "license": "MIT",
     "platform": "Javascript/Node.js",
-    "main": "main.js",
     "icon": "airly.png",
     "enabled": true,
     "mode": "daemon",
@@ -41,38 +55,87 @@
     },
     "supportCustoms": false,
     "news": {
+      "0.3.1": {
+        "en": "Repository-readiness fixes: metadata, license information, encrypted API key, CI workflow and responsive settings.",
+        "de": "Repository-Reife: Metadaten, Lizenzinformationen, verschlüsselter API-Schlüssel, CI-Workflow und responsive Einstellungen.",
+        "ru": "Подготовка к репозиторию: метаданные, информация о лицензии, шифрование ключа API, CI-воркфлоу и адаптивные настройки.",
+        "pt": "Preparação para o repositório: metadados, informações de licença, chave de API encriptada, workflow de CI e definições responsivas.",
+        "nl": "Repository-gereedheid: metadata, licentie-informatie, versleutelde API-sleutel, CI-workflow en responsieve instellingen.",
+        "fr": "Préparation au dépôt : métadonnées, informations de licence, clé API chiffrée, workflow CI et paramètres responsives.",
+        "it": "Preparazione al repository: metadati, informazioni sulla licenza, chiave API cifrata, workflow CI e impostazioni responsive.",
+        "es": "Preparación para el repositorio: metadatos, información de licencia, clave de API cifrada, flujo de CI y ajustes responsivos.",
+        "pl": "Poprawki pod repozytorium: metadane, informacje o licencji, zaszyfrowany klucz API, workflow CI i responsywne ustawienia.",
+        "zh-cn": "为进入仓库做准备：元数据、许可信息、加密的 API 密钥、CI 工作流和自适应设置。",
+        "uk": "Підготовка до репозиторію: метадані, інформація про ліцензію, шифрування ключа API, CI-воркфлоу та адаптивні налаштування."
+      },
       "0.3.0": {
-        "en": "Add Sentry error reporting, declare admin dependency and tier (repository readiness).",
-        "de": "Sentry-Fehlerberichterstattung, admin-Abhängigkeit und Tier deklariert (Repository-Reife).",
-        "pl": "Dodano raportowanie błędów Sentry, zadeklarowano zależność admin i tier (gotowość do repozytorium)."
+        "en": "Add Sentry error reporting and declare the admin dependency and adapter tier.",
+        "de": "Sentry-Fehlerberichterstattung hinzugefügt sowie admin-Abhängigkeit und Adapter-Tier deklariert.",
+        "ru": "Добавлено сообщение об ошибках через Sentry, объявлены зависимость admin и уровень адаптера.",
+        "pt": "Adicionado relato de erros via Sentry e declaradas a dependência admin e o tier do adaptador.",
+        "nl": "Sentry-foutrapportage toegevoegd en de admin-afhankelijkheid en adaptertier gedeclareerd.",
+        "fr": "Ajout du rapport d'erreurs Sentry et déclaration de la dépendance admin et du tier de l'adaptateur.",
+        "it": "Aggiunta la segnalazione errori Sentry e dichiarate la dipendenza admin e il tier dell'adattatore.",
+        "es": "Añadido el informe de errores con Sentry y declaradas la dependencia admin y el tier del adaptador.",
+        "pl": "Dodano raportowanie błędów Sentry oraz zadeklarowano zależność admin i tier adaptera.",
+        "zh-cn": "新增 Sentry 错误报告，并声明 admin 依赖和适配器层级。",
+        "uk": "Додано звітування про помилки через Sentry та оголошено залежність admin і рівень адаптера."
       },
       "0.2.0": {
-        "en": "Use Airly point/nearest measurement endpoints (lat/lng directly). Drops the hourly station lookup and installationId. New 'mode' setting: interpolated point (default) or nearest station.",
-        "de": "Nutzt die Airly point/nearest Messendpunkte (direkt per lat/lng). Entfällt die stündliche Stationssuche und installationId. Neue Einstellung 'mode': interpolierter Punkt (Standard) oder nächste Station.",
-        "pl": "Użycie endpointów pomiarowych Airly point/nearest (bezpośrednio lat/lng). Znika godzinne wyszukiwanie stacji i installationId. Nowe ustawienie 'mode': punkt interpolowany (domyślnie) lub najbliższa stacja."
+        "en": "Use Airly point/nearest measurement endpoints (lat/lng directly). Removes the hourly station lookup and installationId. New 'mode' setting.",
+        "de": "Nutzt die Airly point/nearest Messendpunkte (direkt per lat/lng). Entfällt die stündliche Stationssuche und installationId. Neue Einstellung 'mode'.",
+        "ru": "Используются конечные точки Airly point/nearest (напрямую по lat/lng). Убраны ежечасный поиск станции и installationId. Новая настройка 'mode'.",
+        "pt": "Usa os endpoints de medição point/nearest da Airly (lat/lng diretamente). Remove a procura de estação por hora e o installationId. Nova definição 'mode'.",
+        "nl": "Gebruikt de Airly point/nearest meetendpoints (direct via lat/lng). Verwijdert de uurlijkse stationszoekopdracht en installationId. Nieuwe instelling 'mode'.",
+        "fr": "Utilise les endpoints de mesure point/nearest d'Airly (lat/lng directement). Supprime la recherche horaire de station et l'installationId. Nouveau paramètre 'mode'.",
+        "it": "Usa gli endpoint di misura point/nearest di Airly (lat/lng direttamente). Rimuove la ricerca oraria della stazione e l'installationId. Nuova impostazione 'mode'.",
+        "es": "Usa los endpoints de medición point/nearest de Airly (lat/lng directamente). Elimina la búsqueda horaria de estación y el installationId. Nuevo ajuste 'mode'.",
+        "pl": "Użycie endpointów pomiarowych Airly point/nearest (bezpośrednio lat/lng). Znika godzinne wyszukiwanie stacji i installationId. Nowe ustawienie 'mode'.",
+        "zh-cn": "使用 Airly 的 point/nearest 测量端点（直接用经纬度）。移除每小时的站点查找和 installationId。新增 'mode' 设置。",
+        "uk": "Використовує кінцеві точки вимірювання Airly point/nearest (безпосередньо за lat/lng). Прибрано щогодинний пошук станції та installationId. Нове налаштування 'mode'."
       },
       "0.1.1": {
-        "en": "Fix settings page (use jsonConfig / adminUI instead of legacy index_m.html).",
-        "de": "Einstellungsseite korrigiert (jsonConfig / adminUI statt veraltetem index_m.html).",
-        "pl": "Naprawiona strona ustawień (jsonConfig / adminUI zamiast przestarzałego index_m.html)."
+        "en": "Fix the settings page (jsonConfig/adminUI instead of the legacy index_m.html).",
+        "de": "Einstellungsseite korrigiert (jsonConfig/adminUI statt des veralteten index_m.html).",
+        "ru": "Исправлена страница настроек (jsonConfig/adminUI вместо устаревшего index_m.html).",
+        "pt": "Correção da página de definições (jsonConfig/adminUI em vez do antigo index_m.html).",
+        "nl": "Instellingenpagina gerepareerd (jsonConfig/adminUI in plaats van het verouderde index_m.html).",
+        "fr": "Correction de la page de paramètres (jsonConfig/adminUI au lieu de l'ancien index_m.html).",
+        "it": "Corretta la pagina delle impostazioni (jsonConfig/adminUI invece del vecchio index_m.html).",
+        "es": "Corregida la página de ajustes (jsonConfig/adminUI en lugar del antiguo index_m.html).",
+        "pl": "Naprawiona strona ustawień (jsonConfig/adminUI zamiast przestarzałego index_m.html).",
+        "zh-cn": "修复设置页面（使用 jsonConfig/adminUI 代替旧的 index_m.html）。",
+        "uk": "Виправлено сторінку налаштувань (jsonConfig/adminUI замість застарілого index_m.html)."
       },
       "0.1.0": {
-        "en": "Initial release. Converted from a Node-RED flow.",
-        "de": "Erste Veröffentlichung. Aus einem Node-RED-Flow konvertiert.",
-        "pl": "Pierwsze wydanie. Skonwertowane z flow Node-RED."
+        "en": "Initial release.",
+        "de": "Erste Veröffentlichung.",
+        "ru": "Первый выпуск.",
+        "pt": "Versão inicial.",
+        "nl": "Eerste release.",
+        "fr": "Version initiale.",
+        "it": "Versione iniziale.",
+        "es": "Versión inicial.",
+        "pl": "Pierwsze wydanie.",
+        "zh-cn": "首次发布。",
+        "uk": "Перший випуск."
       }
     },
     "dependencies": [
       {
-        "js-controller": ">=5.0.0"
+        "js-controller": ">=6.0.11"
       }
     ],
     "globalDependencies": [
       {
-        "admin": ">=6.13.16"
+        "admin": ">=7.6.17"
       }
     ],
-    "extIcon": "https://raw.githubusercontent.com/tnowak/ioBroker.airly/master/admin/airly.png"
+    "extIcon": "https://raw.githubusercontent.com/tnowak/ioBroker.airly/master/admin/airly.png",
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    }
   },
   "native": {
     "apikey": "",
@@ -87,7 +150,9 @@
     {
       "_id": "info",
       "type": "channel",
-      "common": { "name": "Information" },
+      "common": {
+        "name": "Information"
+      },
       "native": {}
     },
     {
@@ -118,7 +183,9 @@
     {
       "_id": "pm25",
       "type": "channel",
-      "common": { "name": "PM2.5" },
+      "common": {
+        "name": "PM2.5"
+      },
       "native": {}
     },
     {
@@ -150,7 +217,9 @@
     {
       "_id": "pm10",
       "type": "channel",
-      "common": { "name": "PM10" },
+      "common": {
+        "name": "PM10"
+      },
       "native": {}
     },
     {
@@ -182,7 +251,9 @@
     {
       "_id": "caqi",
       "type": "channel",
-      "common": { "name": "CAQI index" },
+      "common": {
+        "name": "CAQI index"
+      },
       "native": {}
     },
     {
@@ -221,5 +292,11 @@
       },
       "native": {}
     }
+  ],
+  "protectedNative": [
+    "apikey"
+  ],
+  "encryptedNative": [
+    "apikey"
   ]
 }

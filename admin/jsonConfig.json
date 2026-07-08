@@ -6,24 +6,33 @@
       "type": "password",
       "label": "Airly API key",
       "help": "Get one at developer.airly.org",
+      "xs": 12,
       "sm": 12,
       "md": 6,
+      "lg": 6,
+      "xl": 6,
       "newLine": true
     },
     "latitude": {
       "type": "text",
       "label": "Latitude",
       "placeholder": "52.165814",
+      "xs": 12,
       "sm": 12,
       "md": 3,
+      "lg": 3,
+      "xl": 3,
       "newLine": true
     },
     "longitude": {
       "type": "text",
       "label": "Longitude",
       "placeholder": "21.046181",
+      "xs": 12,
       "sm": 12,
-      "md": 3
+      "md": 3,
+      "lg": 3,
+      "xl": 3
     },
     "mode": {
       "type": "select",
@@ -34,8 +43,11 @@
       ],
       "default": "point",
       "help": "Point: Airly interpolates for your exact coordinates. Nearest: data from the closest physical station.",
+      "xs": 12,
       "sm": 12,
       "md": 6,
+      "lg": 6,
+      "xl": 6,
       "newLine": true
     },
     "maxDistanceKM": {
@@ -46,8 +58,11 @@
       "default": 25,
       "help": "Only used in 'Nearest station' mode.",
       "hidden": "data.mode === 'point'",
+      "xs": 12,
       "sm": 12,
       "md": 3,
+      "lg": 3,
+      "xl": 3,
       "newLine": true
     },
     "pollInterval": {
@@ -57,8 +72,11 @@
       "max": 1440,
       "default": 20,
       "help": "Airly free tier allows a limited number of requests per day",
+      "xs": 12,
       "sm": 12,
-      "md": 3
+      "md": 3,
+      "lg": 3,
+      "xl": 3
     }
   }
 }
