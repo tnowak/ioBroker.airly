@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "titleLang": {
       "en": "Airly air quality",
       "de": "Airly Luftqualität",
@@ -55,6 +55,19 @@
     },
     "supportCustoms": false,
     "news": {
+      "0.3.4": {
+        "en": "Addressed repochecker suggestions: short-format i18n, CHANGELOG_OLD.md, .vscode settings, Dependabot automerge + higher PR limit, and @iobroker/adapter-dev",
+        "de": "Folgende Vorschläge für den Repo-Checker wurden berücksichtigt: Kurzformat-i18n, CHANGELOG_OLD.md, .vscode-Einstellungen, Dependabot-Automerge + höheres PR-Limit und @iobroker/adapter-dev",
+        "ru": "Устранены предложения repochecker: короткий формат интернационализации (i18n), файл CHANGELOG_OLD.md, настройки .vscode, автоматическое слияние Dependabot + более высокий лимит запросов на слияние (PR) и @iobroker/adapter-dev",
+        "pt": "Abordamos as sugestões do repochecker: i18n em formato curto, CHANGELOG_OLD.md, configurações do .vscode, mesclagem automática do Dependabot + limite de PR mais alto e @iobroker/adapter-dev",
+        "nl": "Suggesties van repochecker zijn opgevolgd: i18n in korte vorm, CHANGELOG_OLD.md, .vscode-instellingen, Dependabot automerge + hogere PR-limiet en @iobroker/adapter-dev",
+        "fr": "Suggestions de repochecker prises en compte : i18n au format court, CHANGELOG_OLD.md, paramètres .vscode, fusion automatique Dependabot + limite de PR plus élevée et @iobroker/adapter-dev",
+        "it": "Suggerimenti di repochecker presi in considerazione: i18n in formato breve, CHANGELOG_OLD.md, impostazioni .vscode, automerge di Dependabot + limite PR più alto e @iobroker/adapter-dev",
+        "es": "Se abordaron las sugerencias de repochecker: i18n de formato corto, CHANGELOG_OLD.md, configuración de .vscode, fusión automática de Dependabot + límite de PR más alto y @iobroker/adapter-dev",
+        "pl": "Zajęto się sugestiami repocheckera: krótki format i18n, CHANGELOG_OLD.md, ustawienia .vscode, automatyczne scalanie Dependabot + wyższy limit PR i @iobroker/adapter-dev",
+        "uk": "Вирішено пропозиції щодо перевірки репозиторіїв: короткий формат i18n, CHANGELOG_OLD.md, налаштування .vscode, автоматичне злиття Dependabot + вищий ліміт PR та @iobroker/adapter-dev",
+        "zh-cn": "已处理 repochecker 的建议：简短格式的 i18n、CHANGELOG_OLD.md、.vscode 设置、Dependabot 自动合并 + 更高的 PR 限制，以及 @iobroker/adapter-dev"
+      },
       "0.3.3": {
         "en": "Removed chai and mocha from devDependencies (provided by @iobroker/testing) to satisfy the repository checker",
         "de": "Chai und Mocha wurden aus den Entwicklungsabhängigkeiten (bereitgestellt von @iobroker/testing) entfernt, um die Anforderungen des Repository-Checkers zu erfüllen.",
