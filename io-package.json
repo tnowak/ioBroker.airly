@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "title": "Airly",
     "titleLang": {
       "en": "Airly air quality",
@@ -30,11 +30,22 @@
     "compact": true,
     "connectionType": "cloud",
     "dataSource": "poll",
+    "tier": 3,
     "adminUI": {
       "config": "json"
     },
+    "plugins": {
+      "sentry": {
+        "dsn": "https://PLACEHOLDER@sentry.iobroker.net/PLACEHOLDER"
+      }
+    },
     "supportCustoms": false,
     "news": {
+      "0.3.0": {
+        "en": "Add Sentry error reporting, declare admin dependency and tier (repository readiness).",
+        "de": "Sentry-Fehlerberichterstattung, admin-Abhängigkeit und Tier deklariert (Repository-Reife).",
+        "pl": "Dodano raportowanie błędów Sentry, zadeklarowano zależność admin i tier (gotowość do repozytorium)."
+      },
       "0.2.0": {
         "en": "Use Airly point/nearest measurement endpoints (lat/lng directly). Drops the hourly station lookup and installationId. New 'mode' setting: interpolated point (default) or nearest station.",
         "de": "Nutzt die Airly point/nearest Messendpunkte (direkt per lat/lng). Entfällt die stündliche Stationssuche und installationId. Neue Einstellung 'mode': interpolierter Punkt (Standard) oder nächste Station.",
@@ -54,6 +65,11 @@
     "dependencies": [
       {
         "js-controller": ">=5.0.0"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=6.13.16"
       }
     ],
     "extIcon": "https://raw.githubusercontent.com/tnowak/ioBroker.airly/master/admin/airly.png"

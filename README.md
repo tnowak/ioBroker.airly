@@ -59,6 +59,20 @@ straight from GitHub:
 After installing, add an instance and fill in your Airly API key and
 coordinates.
 
+## Changelog
+
+### 0.3.0 (2026-07-08)
+* (tnowak) Added Sentry error reporting and declared the admin dependency and adapter tier (repository readiness)
+
+### 0.2.0 (2026-07-08)
+* (tnowak) Switched to Airly `measurements/point` / `measurements/nearest` (lat/lng directly); removed the hourly station lookup and `installationId`; added the `mode` setting
+
+### 0.1.1 (2026-07-08)
+* (tnowak) Fixed the settings page (jsonConfig/adminUI instead of the legacy `index_m.html`)
+
+### 0.1.0 (2026-07-08)
+* (tnowak) Initial release
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
