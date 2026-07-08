@@ -30,8 +30,15 @@
     "axios": "^1.18.1"
   },
   "devDependencies": {
+    "@alcalzone/release-script": "^5.2.1",
+    "@alcalzone/release-script-plugin-iobroker": "^5.2.0",
+    "@alcalzone/release-script-plugin-license": "^5.2.0",
+    "@iobroker/eslint-config": "^2.3.4",
     "@iobroker/testing": "^5.2.2",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/node": "^26.1.1",
     "chai": "^4.5.0",
+    "eslint": "^9.39.4",
     "mocha": "^11.7.3"
   },
   "files": [
@@ -45,6 +52,8 @@
     "test": "mocha test/*.test.js --exit",
     "test:package": "mocha test/package.test.js --exit",
     "test:unit": "mocha test/extract.test.js --exit",
-    "test:integration": "mocha test/integration.js --exit"
+    "test:integration": "mocha test/integration.js --exit",
+    "lint": "eslint main.js lib/",
+    "release": "release-script"
   }
 }
