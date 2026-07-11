@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.3.5",
+    "version": "0.3.6",
     "titleLang": {
       "en": "Airly air quality",
       "de": "Airly Luftqualität",
@@ -55,6 +55,19 @@
     },
     "supportCustoms": false,
     "news": {
+      "0.3.6": {
+        "en": "Read coordinates fresh on every poll and skip the request (instead of sending NaN) when they are invalid, logging the offending value; set info.connection = false on stop",
+        "de": "Bei jeder Abfrage die Koordinaten neu lesen und die Anfrage überspringen (anstatt NaN zu senden), wenn sie ungültig sind; den fehlerhaften Wert protokollieren; info.connection = false beim Stoppen setzen.",
+        "ru": "При каждом запросе считывайте координаты заново и пропускайте запрос (вместо отправки NaN), если они недействительны, регистрируя некорректное значение; при остановке установите info.connection = false.",
+        "pt": "Leia as coordenadas atualizadas a cada consulta e ignore a solicitação (em vez de enviar NaN) quando elas forem inválidas, registrando o valor incorreto; defina info.connection = false ao parar.",
+        "nl": "Lees de coördinaten bij elke polling opnieuw en sla het verzoek over (in plaats van NaN te verzenden) wanneer ze ongeldig zijn, waarbij de betreffende waarde wordt gelogd; stel info.connection = false in bij stop.",
+        "fr": "Lire les coordonnées à chaque interrogation et ignorer la requête (au lieu d'envoyer NaN) si elles sont invalides, en consignant la valeur erronée ; définir info.connection = false à l'arrêt",
+        "it": "Leggi le coordinate da zero ad ogni interrogazione e salta la richiesta (invece di inviare NaN) quando non sono valide, registrando il valore errato; imposta info.connection = false all'arresto",
+        "es": "Lee las coordenadas actualizadas en cada sondeo y omite la solicitud (en lugar de enviar NaN) cuando no sean válidas, registrando el valor incorrecto; establece info.connection = false al detenerse.",
+        "pl": "Odczytuj współrzędne na nowo przy każdym badaniu i pomijaj żądanie (zamiast wysyłać NaN), gdy są nieprawidłowe, rejestrując błędną wartość; ustaw info.connection = false przy zatrzymywaniu",
+        "uk": "Зчитувати координати заново під час кожного опитування та пропускати запит (замість надсилання NaN), коли вони недійсні, записуючи в журнал значення порушення; встановити info.connection = false під час зупинки",
+        "zh-cn": "每次轮询时都读取最新的坐标，如果坐标无效则跳过请求（而不是发送 NaN），并记录无效值；停止时将 info.connection 设置为 false。"
+      },
       "0.3.5": {
         "en": "Fixed the jsonConfig schema URL in .vscode/settings.json and bumped @iobroker/adapter-dev",
         "de": "Die URL des jsonConfig-Schemas in .vscode/settings.json wurde korrigiert und @iobroker/adapter-dev aktualisiert.",

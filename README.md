@@ -53,6 +53,9 @@ and fill in your Airly API key and coordinates.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.3.6 (2026-07-11)
+* (tnowak) Read coordinates fresh on every poll and skip the request (instead of sending NaN) when they are invalid, logging the offending value; set info.connection = false on stop
+
 ### 0.3.5 (2026-07-08)
 * (tnowak) Fixed the jsonConfig schema URL in .vscode/settings.json and bumped @iobroker/adapter-dev
 
@@ -64,9 +67,6 @@ and fill in your Airly API key and coordinates.
 
 ### 0.3.2 (2026-07-08)
 * (tnowak) Added ESLint (@iobroker/eslint-config), tsconfig, Dependabot and the release-script for development and release automation
-
-### 0.3.1 (2026-07-08)
-* (tnowak) Repository-readiness fixes: metadata, license information, encrypted API key, CI workflow and responsive settings
 
 Older entries are kept in [CHANGELOG_OLD.md](CHANGELOG_OLD.md).
 

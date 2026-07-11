@@ -18,14 +18,13 @@ class Airly extends utils.Adapter {
 
     async onReady() {
         const apikey = (this.config.apikey || '').trim();
-        this.latitude = parseFloat(this.config.latitude);
-        this.longitude = parseFloat(this.config.longitude);
 
         if (!apikey) {
             this.log.error('Airly API key is not configured. Open the adapter settings and enter it.');
             return;
         }
-        if (Number.isNaN(this.latitude) || Number.isNaN(this.longitude)) {
+        const { lat, lng } = this.coords();
+        if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
             this.log.error('Latitude / longitude are not configured correctly.');
             return;
         }
@@ -57,15 +56,39 @@ class Airly extends utils.Adapter {
     }
 
     /**
+     * Read the configured coordinates fresh from the (live) adapter config on every call,
+     * so a poll never sends a stale/invalid value.
+     *
+     * @returns {{ lat: number, lng: number }} parsed latitude/longitude (NaN if unset/invalid)
+     */
+    coords() {
+        return {
+            lat: parseFloat(this.config.latitude),
+            lng: parseFloat(this.config.longitude),
+        };
+    }
+
+    /**
      * One measurement cycle: fetch measurements for the configured point and write states.
      *
      * Airly's point/nearest measurement endpoints take lat/lng directly, so there is no
      * separate "find installation" call and no installationId to cache.
      */
     async poll() {
+        const { lat, lng } = this.coords();
+        if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+            this.log.warn(
+                `Skipping poll: coordinates are not valid numbers ` +
+                    `(latitude=${JSON.stringify(this.config.latitude)}, longitude=${JSON.stringify(this.config.longitude)}). ` +
+                    `Check the instance settings.`,
+            );
+            await this.setStateChangedAsync('info.connection', { val: false, ack: true });
+            return;
+        }
+
         try {
             const endpoint = this.mode === 'nearest' ? '/measurements/nearest' : '/measurements/point';
-            const params = { lat: this.latitude, lng: this.longitude };
+            const params = { lat, lng };
             if (this.mode === 'nearest') {
                 params.maxDistanceKM = this.maxDistanceKM;
             }
@@ -144,6 +167,7 @@ class Airly extends utils.Adapter {
                 this.clearInterval(this.pollTimer);
                 this.pollTimer = null;
             }
+            this.setState('info.connection', { val: false, ack: true });
             callback();
         } catch {
             callback();

@@ -1,4 +1,7 @@
 # Older changelog entries
+## 0.3.1 (2026-07-08)
+* (tnowak) Repository-readiness fixes: metadata, license information, encrypted API key, CI workflow and responsive settings
+
 ## 0.3.0 (2026-07-08)
 * (tnowak) Added Sentry error reporting and declared the admin dependency and adapter tier (repository readiness)
 
