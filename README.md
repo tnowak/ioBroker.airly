@@ -3,10 +3,6 @@
 Adapter reading air quality data (PM2.5, PM10, CAQI index) for your location
 from [Airly](https://airly.org).
 
-## Sentry
-
-This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers. For more details and for information how to disable the error reporting see [Sentry-Plugin Documentation](https://github.com/ioBroker/plugin-sentry#plugin-sentry)! Sentry reporting is used starting with js-controller 3.0.
-
 ## Configuration
 
 | Setting          | Meaning                                                          |
@@ -41,6 +37,11 @@ debug log on every poll.
 | `info.connection`       | API reachable / data valid                |
 | `info.lastUpdate`       | Timestamp of the last measurement         |
 
+`caqi.level` and `caqi.description` are text values returned directly by the Airly
+API. Their language is chosen by Airly (based on the request / API default, usually
+English) and is **not** translated by the adapter, so it may not match the ioBroker
+UI language.
+
 ## Installation
 
 Open the **Adapters** tab in the ioBroker admin, find **Airly** and click the
@@ -53,6 +54,9 @@ and fill in your Airly API key and coordinates.
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
+### 0.3.7 (2026-08-07)
+* (tnowak) Review feedback: removed the incomplete Sentry plugin configuration, enforced the poll-interval minimum (5 min) in code, and documented that caqi.level/description are API-provided and not translated
+
 ### 0.3.6 (2026-07-11)
 * (tnowak) Read coordinates fresh on every poll and skip the request (instead of sending NaN) when they are invalid, logging the offending value; set info.connection = false on stop
 
@@ -64,9 +68,6 @@ and fill in your Airly API key and coordinates.
 
 ### 0.3.3 (2026-07-08)
 * (tnowak) Removed chai and mocha from devDependencies (provided by @iobroker/testing) to satisfy the repository checker
-
-### 0.3.2 (2026-07-08)
-* (tnowak) Added ESLint (@iobroker/eslint-config), tsconfig, Dependabot and the release-script for development and release automation
 
 Older entries are kept in [CHANGELOG_OLD.md](CHANGELOG_OLD.md).
 

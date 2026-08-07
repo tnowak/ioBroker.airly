@@ -31,7 +31,9 @@ class Airly extends utils.Adapter {
 
         this.mode = this.config.mode === 'nearest' ? 'nearest' : 'point';
         this.maxDistanceKM = parseFloat(this.config.maxDistanceKM) || 25;
-        const pollMinutes = parseInt(this.config.pollInterval, 10) || 20;
+        // Enforce a hard minimum of 5 minutes in code too (the jsonConfig min is frontend-only),
+        // so a value entered via CLI / object edit cannot exhaust Airly's daily quota.
+        const pollMinutes = Math.max(5, parseInt(this.config.pollInterval, 10) || 20);
 
         this.http = axios.create({
             baseURL: API_BASE,

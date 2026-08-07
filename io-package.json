@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.3.6",
+    "version": "0.3.7",
     "titleLang": {
       "en": "Airly air quality",
       "de": "Airly Luftqualität",
@@ -48,13 +48,21 @@
     "adminUI": {
       "config": "json"
     },
-    "plugins": {
-      "sentry": {
-        "dsn": "https://PLACEHOLDER@sentry.iobroker.net/PLACEHOLDER"
-      }
-    },
     "supportCustoms": false,
     "news": {
+      "0.3.7": {
+        "en": "Review feedback: removed the incomplete Sentry plugin configuration, enforced the poll-interval minimum (5 min) in code, and documented that caqi.level/description are API-provided and not translated",
+        "de": "Review-Feedback: Entfernen der unvollständigen Sentry-Plugin-Konfiguration, Erzwingen des Minimums des Umfrageintervalls (5 min) im Code und Dokumentieren, dass caqi.level/description API-bereitgestellt und nicht übersetzt sind",
+        "ru": "Обратная связь с обзором: удалена неполная конфигурация плагина Sentry, приведен в действие минимальный интервал опроса (5 минут) в коде и задокументировано, что caqi.level / описание предоставляются API и не переведены",
+        "pt": "Feedback de revisão: removeu a configuração incompleta do plugin Sentry, executou o mínimo de intervalo de votação (5 min) em código, e documentou que caqi.level/description são fornecidos API e não traduzidos",
+        "nl": "Recensie feedback: verwijderde de onvolledige configuratie van de Sentry plugin, afgedwongen de poll-interval minimum (5 min) in code, en gedocumenteerd dat caqi.level/beschrijving zijn API-geleverd en niet vertaald",
+        "fr": "Revoir la rétroaction : a retiré la configuration incomplète du plugin Sentry, a imposé le minimum d'intervalle de sondage (5 min) en code, et documenté que caqi.level/description sont fournis par API et non traduits",
+        "it": "Commento: rimosso la configurazione del plugin Sentry incompleto, imposto il minimo di poll-interval (5 min) in codice, e documentato che caqi.level/descrizione sono API-provided e non tradotto",
+        "es": "Repaso de la retroalimentación: eliminar la configuración incompleta del plugin Sentry, hizo cumplir el mínimo de votación-intervalo (5 min) en código, y documentó que caqi.nivel/descripción son proporcionados por API y no traducidos",
+        "pl": "Recenzja informacji zwrotnych: usunął niekompletną konfigurację wtyczki Sentry, egzekwował minimum interwał zanieczyszczenia (5 min) w kodzie, i udokumentował, że caqi.level / opis są API- dostarczone i nie przetłumaczone",
+        "uk": "Огляд відгуки: видалити неповну конфігурацію плагіна Sentry, застосовували мінімум опитування (5 хв) в коді, і задокументовано, що caqi.level/description are API-provided і не перекладено",
+        "zh-cn": "审查反馈:移除不完整的哨兵插件配置,在代码中执行民意-中间线最小值(5分钟),并记录caqi.level/description是API提供的,没有翻译"
+      },
       "0.3.6": {
         "en": "Read coordinates fresh on every poll and skip the request (instead of sending NaN) when they are invalid, logging the offending value; set info.connection = false on stop",
         "de": "Bei jeder Abfrage die Koordinaten neu lesen und die Anfrage überspringen (anstatt NaN zu senden), wenn sie ungültig sind; den fehlerhaften Wert protokollieren; info.connection = false beim Stoppen setzen.",
