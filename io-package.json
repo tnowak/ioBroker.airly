@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.3.8",
+    "version": "1.0.0",
     "titleLang": {
       "en": "Airly air quality",
       "de": "Airly Luftqualität",
@@ -50,6 +50,19 @@
     },
     "supportCustoms": false,
     "news": {
+      "1.0.0": {
+        "en": "First stable release — marks the adapter as production-ready for the ioBroker stable repository (no functional changes since 0.3.8)",
+        "de": "Erste stabile Version — markiert den Adapter als produktionsbereit für das ioBroker Stable Repository (seit 0.3.8)",
+        "ru": "Первая стабильная версия — адаптер отмечен как готовый к производству для стабильного репозитория IOBroker (с версии 0.3.8 функциональные изменения отсутствуют)",
+        "pt": "Primeira versão estável — marca o adaptador como pronto para produção no repositório estável do IOBroker (sem mudanças desde 0.3.8)",
+        "nl": "Eerste stabiele release — markeert de adapter als productieklaar voor de stabiele opslagplaats van ioBroker (geen functionele wijzigingen sinds 0.3.8)",
+        "fr": "Première version stable : indique que l'adaptateur est prêt pour la production d'IObroker (aucun changement fonctionnel depuis la 0.3.8)",
+        "it": "Prima versione stabile: indica l'adattatore pronto per l'archivio stabile IOBroker (nessuna modifica dalla 0.3.8)",
+        "es": "Primera versión estable: marca el adaptador como listo para producción para el repositorio estable de ioBroker (sin cambios funcionales desde la 0.3.8)",
+        "pl": "Pierwsze stabilne wydanie — oznacza adapter jako gotowy do produkcji dla stabilnego repozytorium ioBroker (brak zmian funkcjonalnych od 0.3.8)",
+        "uk": "Перший стабільний випуск - позначає адаптер як готовий до виробництва для стабільного сховища IObroker (без функціональних змін з 0.3.8)",
+        "zh-cn": "第一个稳定版本 — 将适配器标记为 IOBroker 稳定存储库的生产就绪（自 0.3.8 以来没有功能变化）"
+      },
       "0.3.8": {
         "en": "Maintenance: added Node.js 26 to the CI matrix, bumped the ioBroker testing actions to v2 and @iobroker/adapter-core to 3.4.3, raised the admin dependency to 7.8.23, grouped Dependabot updates, and removed the pull_request_target automerge workflow",
         "de": "Wartung: Node.js 26 zur CI-Matrix hinzugefügt, ioBroker-Testaktionen auf v2 und @iobroker /adapter-core auf 3.4.3 erhöht, Admin-Abhängigkeit auf 7.8.23 erhöht, Dependabot-Updates gruppiert und Pull_Request_Target Automerge entfernt",
@@ -127,19 +140,6 @@
         "pl": "Usunięto chai i mocha z devDependencies (zapewnionych przez @iobroker/testing), aby spełnić wymagania programu sprawdzającego repozytorium",
         "uk": "Видалено чай та мокку з devDependencies (надано @iobroker/testing), щоб задовольнити вимоги перевірки репозиторію",
         "zh-cn": "为了满足仓库检查器的要求，已从 devDependencies（由 @iobroker/testing 提供）中移除 chai 和 mocha。"
-      },
-      "0.3.2": {
-        "en": "Added ESLint (@iobroker/eslint-config), tsconfig, Dependabot and the release-script for development and release automation",
-        "de": "ESLint (@iobroker/eslint-config), tsconfig, Dependabot und das Release-Skript für die Entwicklungs- und Release-Automatisierung wurden hinzugefügt.",
-        "ru": "Добавлены ESLint (@iobroker/eslint-config), tsconfig, Dependabot и release-script для автоматизации разработки и выпуска релизов.",
-        "pt": "Adicionado ESLint (@iobroker/eslint-config), tsconfig, Dependabot e o script de lançamento para automação de desenvolvimento e lançamento.",
-        "nl": "ESLint (@iobroker/eslint-config), tsconfig, Dependabot en het release-script zijn toegevoegd voor ontwikkeling en releaseautomatisering.",
-        "fr": "Ajout d'ESLint (@iobroker/eslint-config), tsconfig, Dependabot et du script de déploiement pour l'automatisation du développement et du déploiement.",
-        "it": "Aggiunti ESLint (@iobroker/eslint-config), tsconfig, Dependabot e lo script di rilascio per l'automazione dello sviluppo e del rilascio.",
-        "es": "Se añadieron ESLint (@iobroker/eslint-config), tsconfig, Dependabot y el script de lanzamiento para la automatización del desarrollo y el lanzamiento.",
-        "pl": "Dodano ESLint (@iobroker/eslint-config), tsconfig, Dependabot i skrypt wydania do automatyzacji rozwoju i wydania",
-        "uk": "Додано ESLint (@iobroker/eslint-config), tsconfig, Dependabot та release-скрипт для автоматизації розробки та випуску.",
-        "zh-cn": "新增了 ESLint (@iobroker/eslint-config)、tsconfig、Dependabot 和发布脚本，用于开发和发布自动化。"
       }
     },
     "dependencies": [

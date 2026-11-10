@@ -1,4 +1,7 @@
 # Older changelog entries
+## 0.3.4 (2026-07-08)
+* (tnowak) Addressed repochecker suggestions: short-format i18n, CHANGELOG_OLD.md, .vscode settings, Dependabot automerge + higher PR limit, and @iobroker/adapter-dev
+
 ## 0.3.3 (2026-07-08)
 * (tnowak) Removed chai and mocha from devDependencies (provided by @iobroker/testing) to satisfy the repository checker
 
