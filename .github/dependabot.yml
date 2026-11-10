@@ -7,6 +7,10 @@ updates:
     open-pull-requests-limit: 15
     labels:
       - dependencies
+    groups:
+      all-npm:
+        patterns:
+          - "*"
     cooldown:
       default-days: 7
     ignore:
@@ -20,3 +24,7 @@ updates:
       interval: monthly
     labels:
       - dependencies
+    groups:
+      all-actions:
+        patterns:
+          - "*"

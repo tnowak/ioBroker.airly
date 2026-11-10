@@ -1,7 +1,7 @@
 {
   "common": {
     "name": "airly",
-    "version": "0.3.7",
+    "version": "0.3.8",
     "titleLang": {
       "en": "Airly air quality",
       "de": "Airly Luftqualität",
@@ -50,6 +50,19 @@
     },
     "supportCustoms": false,
     "news": {
+      "0.3.8": {
+        "en": "Maintenance: added Node.js 26 to the CI matrix, bumped the ioBroker testing actions to v2 and @iobroker/adapter-core to 3.4.3, raised the admin dependency to 7.8.23, grouped Dependabot updates, and removed the pull_request_target automerge workflow",
+        "de": "Wartung: Node.js 26 zur CI-Matrix hinzugefügt, ioBroker-Testaktionen auf v2 und @iobroker /adapter-core auf 3.4.3 erhöht, Admin-Abhängigkeit auf 7.8.23 erhöht, Dependabot-Updates gruppiert und Pull_Request_Target Automerge entfernt",
+        "ru": "Техническое обслуживание: добавлен файл Node.js 26 в матрицу CI, количество тестовых действий IOBroker увеличено до версии v2 и @iobroker /adapter-core до 3.4.3, увеличена зависимость администратора до 7.8.23, сгруппированы обновления Dependabot и удален рабочий процесс pull_request_target automerge",
+        "pt": "Manutenção: adicionou o Node.js 26 à matriz de CI, elevou as ações de teste do IOBroker para v2 e @iobroker /adapter-core para 3.4.3, agrupou Dependabot updates e removeu o fluxo de trabalho automerge pull_request_target",
+        "nl": "Onderhoud: Node.js 26 toegevoegd aan de CI-matrix, de testacties van IOBroker verhoogd naar v2 en @iobroker /adapter-core naar 3.4.3, de beheerdersafhankelijkheid verhoogd naar 7.8.23, Dependabot-updates gegroepeerd en de pull_request_target automerge-workflow verwijderd",
+        "fr": "Maintenance : ajout de Node.js 26 à la matrice CI, passage des tests d'IObroker à la v2 et @iobroker /adapter-core à la 3.4.3, augmenté la dépendance admin à 7.8.23, regroupé les mises à jour de Dependabot et supprimé le workflow automatique pull_request_target",
+        "it": "Manutenzione: ha aggiunto Node.js 26 alla matrice CI, ha aumentato le azioni di test IOBroker a v2 e @iobroker /adapter-core a 3.4.3, ha aumentato la dipendenza admin a 7.8.23, Dependabot e rimosso il workflow pull_request_target",
+        "es": "Mantenimiento: añadió Node.js 26 a la matriz de CI, pasó las acciones de prueba de IOBroker a v2 y @iobroker /adapter-core a 3.4.3, elevó la dependencia administrativa a 7.8.23, agrupó las actualizaciones del Dependabot y eliminó el flujo de trabajo automático pull_request_target",
+        "pl": "Konserwacja: dodano Node.js 26 do macierzy CI, zrzuciło akcje testowe ioBroker do wersji v2 i @iobroker /adapter-core do wersji 3.4.3, podniosło zależność administratora do 7.8.23, pogrupowało aktualizacje Dependabot i usunęło przepływ pracy pull_request_target automerge",
+        "uk": "Технічне обслуговування: додано Node.js 26 до матриці CI, збільшено дії тестування IObroker до v2 та @iobroker /адапter-core до 3.4.3, підвищено залежність адміністратора до 7.8.23, згрупували оновлення Dependabot та видалили робочий процес pull_request_target automerge",
+        "zh-cn": "维护：将 Node.js 26 添加到 CI 矩阵中，将 ioBroker 的测试操作提升到 v2，将 @iobroker /adapter-core 升级到 3.4.3，将管理员依赖关系提高到 7.8.23，对 Dependabot 更新进行分组，并删除了 pull_request_target 自动合并工作流程"
+      },
       "0.3.7": {
         "en": "Review feedback: removed the incomplete Sentry plugin configuration, enforced the poll-interval minimum (5 min) in code, and documented that caqi.level/description are API-provided and not translated",
         "de": "Review-Feedback: Entfernen der unvollständigen Sentry-Plugin-Konfiguration, Erzwingen des Minimums des Umfrageintervalls (5 min) im Code und Dokumentieren, dass caqi.level/description API-bereitgestellt und nicht übersetzt sind",
@@ -127,19 +140,6 @@
         "pl": "Dodano ESLint (@iobroker/eslint-config), tsconfig, Dependabot i skrypt wydania do automatyzacji rozwoju i wydania",
         "uk": "Додано ESLint (@iobroker/eslint-config), tsconfig, Dependabot та release-скрипт для автоматизації розробки та випуску.",
         "zh-cn": "新增了 ESLint (@iobroker/eslint-config)、tsconfig、Dependabot 和发布脚本，用于开发和发布自动化。"
-      },
-      "0.3.1": {
-        "en": "Repository-readiness fixes: metadata, license information, encrypted API key, CI workflow and responsive settings.",
-        "de": "Repository-Reife: Metadaten, Lizenzinformationen, verschlüsselter API-Schlüssel, CI-Workflow und responsive Einstellungen.",
-        "ru": "Подготовка к репозиторию: метаданные, информация о лицензии, шифрование ключа API, CI-воркфлоу и адаптивные настройки.",
-        "pt": "Preparação para o repositório: metadados, informações de licença, chave de API encriptada, workflow de CI e definições responsivas.",
-        "nl": "Repository-gereedheid: metadata, licentie-informatie, versleutelde API-sleutel, CI-workflow en responsieve instellingen.",
-        "fr": "Préparation au dépôt : métadonnées, informations de licence, clé API chiffrée, workflow CI et paramètres responsives.",
-        "it": "Preparazione al repository: metadati, informazioni sulla licenza, chiave API cifrata, workflow CI e impostazioni responsive.",
-        "es": "Preparación para el repositorio: metadatos, información de licencia, clave de API cifrada, flujo de CI y ajustes responsivos.",
-        "pl": "Poprawki pod repozytorium: metadane, informacje o licencji, zaszyfrowany klucz API, workflow CI i responsywne ustawienia.",
-        "zh-cn": "为进入仓库做准备：元数据、许可信息、加密的 API 密钥、CI 工作流和自适应设置。",
-        "uk": "Підготовка до репозиторію: метадані, інформація про ліцензію, шифрування ключа API, CI-воркфлоу та адаптивні налаштування."
       }
     },
     "dependencies": [
@@ -149,7 +149,7 @@
     ],
     "globalDependencies": [
       {
-        "admin": ">=7.6.20"
+        "admin": ">=7.8.23"
       }
     ],
     "extIcon": "https://raw.githubusercontent.com/tnowak/ioBroker.airly/master/admin/airly.png",
